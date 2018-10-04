@@ -21,6 +21,8 @@ bufferButtonStyle can be set to either dark, light or clear
 
 - Counter View
 
+![Counter view](art/counter_view.png)
+
 For more information on the counter view, please see the repository [here](https://github.com/bufferapp/CounterView)
 
 Dimensions
