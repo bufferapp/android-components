@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="button_radius">4dp</dimen>
+    <dimen name="corner_radius">4dp</dimen>
 
     <dimen name="text_hero">32sp</dimen>
     <dimen name="text_headline">24sp</dimen>
