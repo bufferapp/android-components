@@ -7,7 +7,7 @@ Widgets
 
 - Rounded Rectanglular button
 
-
+![Rounded button](art/rounded_button.png)
 
 Usage:
 
