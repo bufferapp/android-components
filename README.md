@@ -5,7 +5,7 @@ This library contains a shared set of component used within our Android App.
 Widgets
 -------
 
-- Rounded Rectanglular button
+### Rounded Rectanglular button
 
 ![Rounded button](art/rounded_button.png)
 
@@ -19,7 +19,7 @@ Usage:
 bufferButtonStyle can be set to either dark, light or clear
 
 
-- Counter View
+### Counter View
 
 ![Counter view](art/counter_view.png)
 
