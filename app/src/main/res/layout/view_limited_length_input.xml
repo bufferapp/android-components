@@ -24,6 +24,6 @@
         android:layout_gravity="end"
         app:counterErrorTextColor="@color/red"
         app:counterMode="descending"
-        app:counterTextColor="?colorAccent"
+        app:counterCountColor="?colorAccent"
         tools:text="260" />
 </LinearLayout>
