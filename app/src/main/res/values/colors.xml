@@ -7,6 +7,7 @@
     <color name="white">#ffffff</color>
     <color name="off_white">#F4F7F9</color>
     <color name="curious_blue">#004CFF</color>
+    <color name="curious_blue_dark">#0143DE</color>
     <color name="curious_blue_light">#55AAEC</color>
     <color name="sidebar_blue">#192534</color>
     <color name="sidebar_blue_light">#384E69</color>
