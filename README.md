@@ -39,4 +39,8 @@ Colors
 Styles
 ------
 
+- Font Styles
+
+![Text styles](art/text_styles.png)
+
 TBC

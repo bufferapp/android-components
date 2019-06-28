@@ -28,4 +28,66 @@
     <color name="title_text">#000000</color>
     <color name="content_text">#6B6B6B</color>
 
+    <!--BDS colors-->
+
+    <color name="gray_lighter">#F5F5F5</color>
+    <color name="gray_light">#E0E0E0</color>
+    <color name="gray">#B8B8B8</color>
+    <color name="gray_dark">#636363</color>
+    <color name="gray_darker">#3D3D3D</color>
+
+    <color name="blue_lighter">#ABB7FF</color>
+    <color name="blue_light">#6B81FF</color>
+    <color name="blue">#2C4BFF</color>
+    <color name="blue_dark">#1F35B3</color>
+    <color name="blue_darker">#121E66</color>
+
+    <color name="purple_lighter">#D7AAFF</color>
+    <color name="purple_light">#BA6BFF</color>
+    <color name="purple">#9C2BFF</color>
+    <color name="purple_dark">#6D1EB3</color>
+    <color name="purple_darker">#3E1166</color>
+
+    <color name="pink_lighter">#F0A8DE</color>
+    <color name="pink_light">#E466C5</color>
+    <color name="pink">#D925AC</color>
+    <color name="pink_dark">#981A78</color>
+    <color name="pink_darker">#570F45</color>
+
+    <color name="teal_lighter">#99E9EC</color>
+    <color name="teal_light">#4DD9DD</color>
+    <color name="teal">#00C8CF</color>
+    <color name="teal_dark">#008387</color>
+    <color name="teal_darker">#005053</color>
+
+    <color name="red_lighter">#F3AFB9</color>
+    <color name="red_light">#E97284</color>
+    <color name="red">#E0364F</color>
+    <color name="red_dark">#9D2637</color>
+    <color name="red_darker">#5A1620</color>
+
+    <color name="orange_lighter">#FFC6AB</color>
+    <color name="orange_light">#FF9B6B</color>
+    <color name="orange">#FF702C</color>
+    <color name="orange_dark">#662D12</color>
+    <color name="orange_darker">#5A1620</color>
+
+    <color name="yellow_lighter">#FDF2AA</color>
+    <color name="yellow_light">#FCE86A</color>
+    <color name="yellow">#FADE2A</color>
+    <color name="yellow_dark">#A8961D</color>
+    <color name="yellow_darker">#645911</color>
+
+    <color name="green_lighter">#CFE7A6</color>
+    <color name="green_light">#ABD464</color>
+    <color name="green">#87C221</color>
+    <color name="green_dark">#598016</color>
+    <color name="green_darker">#364E0D</color>
+
+    <color name="text_primary">@color/gray_darker</color>
+    <color name="text_disabled">@color/gray_dark</color>
+    <color name="text_placeholder">@color/gray</color>
+    <color name="text_notice">@color/red_dark</color>
+    <color name="text_button">@color/blue</color>
+
 </resources>

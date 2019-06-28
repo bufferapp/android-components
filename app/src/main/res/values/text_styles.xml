@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="HeadlineOne">
+    <item name="android:textSize">@dimen/text_hero</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">@color/text_primary</item>
+  </style>
+
+  <style name="HeadlineTwo">
+    <item name="android:textSize">@dimen/text_headline</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">@color/text_primary</item>
+  </style>
+
+  <style name="Heading">
+    <item name="android:textSize">@dimen/text_large_body</item>
+    <item name="android:textColor">@color/text_primary</item>
+  </style>
+
+  <style name="Subheading">
+    <item name="android:textSize">@dimen/text_body</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">@color/text_primary</item>
+  </style>
+
+  <style name="BodyMedium">
+    <item name="android:textSize">@dimen/text_small_body</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">@color/text_primary</item>
+  </style>
+
+  <style name="Body">
+    <item name="android:textSize">@dimen/text_small_body</item>
+    <item name="android:textColor">@color/text_primary</item>
+  </style>
+
+  <style name="Label">
+    <item name="android:textSize">@dimen/text_small_body</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">@color/text_primary</item>
+  </style>
+
+  <style name="Input">
+    <item name="android:textSize">@dimen/text_small_body</item>
+    <item name="android:textColor">@color/text_primary</item>
+  </style>
+
+  <style name="SmallTextMedium">
+    <item name="android:textSize">@dimen/text_smaller_body</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">@color/text_primary</item>
+  </style>
+
+  <style name="SmallText">
+    <item name="android:textSize">@dimen/text_smaller_body</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">@color/text_primary</item>
+  </style>
+
+</resources>
