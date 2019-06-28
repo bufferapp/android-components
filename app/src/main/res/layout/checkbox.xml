@@ -13,6 +13,6 @@
         android:text="@string/dialog_dont_ask_again"
         android:layout_marginStart="8dp"
         android:drawablePadding="16dp"
-        android:textColor="@color/nevada" />
+        android:textColor="?android:textColorPrimary" />
 
 </LinearLayout>
