@@ -87,5 +87,7 @@
     <color name="text_primary">@color/gray_darker</color>
     <color name="text_disabled">@color/gray_dark</color>
     <color name="text_placeholder">@color/gray</color>
+    <color name="text_notice">@color/red_dark</color>
+    <color name="text_button">@color/blue</color>
 
 </resources>
