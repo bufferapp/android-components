@@ -27,5 +27,6 @@
 
     <color name="title_text">#000000</color>
     <color name="content_text">#6B6B6B</color>
+    <color name="disabled_text">#77797A</color>
 
 </resources>
