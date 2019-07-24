@@ -44,6 +44,18 @@ object DialogFactory {
     fun createSimpleYesNoDialog(
             context: Context,
             title: String,
+            message: String
+    ): AlertDialog {
+        val alertDialog = AlertDialog.Builder(context)
+                .setTitle(title)
+                .setMessage(message)
+                .setNeutralButton(R.string.dialog_action_ok, null);
+        return alertDialog.create()
+    }
+
+    fun createSimpleYesNoDialog(
+            context: Context,
+            title: String,
             message: String,
             positive: String
     ): AlertDialog {

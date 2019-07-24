@@ -24,7 +24,7 @@ class RoundedButton @JvmOverloads constructor(context: Context,
         val style = ButtonStyle.fromIdentifier(getStyleIdentifierFromStyleableAttributes(attrs))
         when (style) {
             ButtonStyle.DARK -> {
-                setTextColor(ContextCompat.getColor(context,
+                setTextColor(ContextCompat.getColorStateList(context,
                         R.color.selector_dark_button_text))
                 setBackgroundResource(R.drawable.button_bfr_round_dark)
             }
@@ -34,7 +34,7 @@ class RoundedButton @JvmOverloads constructor(context: Context,
                 setBackgroundResource(R.drawable.button_bfr_round_light)
             }
             ButtonStyle.CLEAR -> {
-                setTextColor(ContextCompat.getColor(context,
+                setTextColor(ContextCompat.getColorStateList(context,
                         R.color.selector_clear_button_text))
                 setBackgroundResource(R.drawable.button_bfr_round_white)
             }
