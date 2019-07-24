@@ -8,10 +8,11 @@ import android.support.v7.widget.AppCompatButton
 import android.util.AttributeSet
 import android.view.Gravity.CENTER_HORIZONTAL
 
-class RoundedButton @JvmOverloads constructor(context: Context,
-                                              attrs: AttributeSet? = null,
-                                              defStyleAttr: Int = 0)
-    : AppCompatButton(context, attrs, defStyleAttr) {
+class RoundedButton @JvmOverloads constructor(
+        context: Context,
+        attrs: AttributeSet? = null,
+        defStyleAttr: Int = 0
+) : AppCompatButton(context, attrs, defStyleAttr) {
 
     init {
         setBackground(attrs)
