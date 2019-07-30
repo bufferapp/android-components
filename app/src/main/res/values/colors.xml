@@ -1,34 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">@color/white</color>
-    <color name="colorPrimaryDark">@color/denim</color>
+    <color name="colorPrimaryDark">@color/curious_blue_dark</color>
     <color name="colorAccent">@color/curious_blue</color>
 
-    <color name="white">#ffffff</color>
-    <color name="off_white">#F4F7F9</color>
-    <color name="curious_blue">#004CFF</color>
-    <color name="curious_blue_dark">#0143DE</color>
-    <color name="curious_blue_light">#55AAEC</color>
-    <color name="sidebar_blue">#192534</color>
-    <color name="sidebar_blue_light">#384E69</color>
-    <color name="denim">#0f63a4</color>
-    <color name="aqua_haze">#f4f7f9</color>
-    <color name="geyser">#ced7df</color>
-    <color name="nevada">#666c72</color>
-    <color name="solid_gray">#E9EAED</color>
-    <color name="light_shuttle_gray">#F0F0F0</color>
-    <color name="shuttle_gray">#59626a</color>
-    <color name="outer_space">#323b43</color>
-    <color name="torch_red">#ff1e1e</color>
-    <color name="misty_grey">#BDBDBD</color>
+    <color name="curious_blue">@color/blue</color>
+    <color name="curious_blue_dark">@color/blue_dark</color>
+    <color name="curious_blue_light">@color/blue_light</color>
 
     <color name="black">#000000</color>
-    <color name="light_grey">#ECECEC</color>
-    <color name="grey_text">#636363</color>
-
-    <color name="title_text">#000000</color>
-    <color name="content_text">#6B6B6B</color>
-    <color name="disabled_text">#77797A</color>
+    <color name="white">#ffffff</color>
 
     <!--BDS colors-->
 

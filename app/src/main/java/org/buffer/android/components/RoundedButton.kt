@@ -6,6 +6,7 @@ import android.graphics.Typeface
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.AppCompatButton
 import android.util.AttributeSet
+import android.view.Gravity.CENTER
 import android.view.Gravity.CENTER_HORIZONTAL
 
 class RoundedButton @JvmOverloads constructor(
@@ -16,7 +17,7 @@ class RoundedButton @JvmOverloads constructor(
 
     init {
         setBackground(attrs)
-        gravity = CENTER_HORIZONTAL
+        gravity = CENTER
         isClickable = true
         typeface = Typeface.DEFAULT_BOLD
     }
