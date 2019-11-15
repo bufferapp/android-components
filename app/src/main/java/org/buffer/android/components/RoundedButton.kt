@@ -3,8 +3,8 @@ package org.buffer.android.components
 import android.buffer.org.ui_kit.R
 import android.content.Context
 import android.graphics.Typeface
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.AppCompatButton
+import androidx.core.content.ContextCompat
+import androidx.appcompat.widget.AppCompatButton
 import android.util.AttributeSet
 import android.view.Gravity.CENTER
 
