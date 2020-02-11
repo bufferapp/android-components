@@ -28,7 +28,7 @@ object DialogFactory {
     fun createSimpleYesNoDialog(
             context: Context,
             title: String,
-            message: String,
+            message: String? = null,
             positive: String,
             negative: String,
             positiveListener: DialogInterface.OnClickListener? = null,
@@ -36,9 +36,11 @@ object DialogFactory {
     ): AlertDialog {
         val alertDialog = MaterialAlertDialogBuilder(context)
                 .setTitle(title)
-                .setMessage(message)
                 .setPositiveButton(positive, positiveListener)
                 .setNegativeButton(negative, negativeListener)
+        if (!message.isNullOrBlank()) {
+            alertDialog.setMessage(message)
+        }
         return alertDialog.create()
     }
 
