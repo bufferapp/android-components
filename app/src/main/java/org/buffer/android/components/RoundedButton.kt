@@ -2,51 +2,51 @@ package org.buffer.android.components
 
 import android.buffer.org.ui_kit.R
 import android.content.Context
-import android.graphics.Typeface
 import androidx.core.content.ContextCompat
-import androidx.appcompat.widget.AppCompatButton
 import android.util.AttributeSet
 import android.view.Gravity.CENTER
 import com.google.android.material.button.MaterialButton
 
 class RoundedButton @JvmOverloads constructor(
-        context: Context,
-        attrs: AttributeSet? = null,
-        defStyleAttr: Int = 0
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
 ) : MaterialButton(context, attrs, defStyleAttr) {
 
     init {
         setBackground(attrs)
         gravity = CENTER
         isClickable = true
-        typeface = Typeface.DEFAULT_BOLD
     }
 
     private fun setBackground(attrs: AttributeSet? = null) {
         when (ButtonStyle.fromIdentifier(getStyleIdentifierFromStyleableAttributes(attrs))) {
             ButtonStyle.DARK -> {
                 setTextColor(ContextCompat.getColorStateList(context,
-                        R.color.selector_dark_button_text))
-                setBackgroundResource(R.drawable.button_bfr_round_dark)
+                    R.color.selector_dark_button_text))
+                backgroundTintList = ContextCompat.getColorStateList(context,
+                    R.color.selector_dark_button_background)
             }
             ButtonStyle.LIGHT -> {
                 setTextColor(ContextCompat.getColorStateList(context,
-                        R.color.selector_light_button_text))
-                setBackgroundResource(R.drawable.button_bfr_round_light)
+                    R.color.selector_light_button_text))
+                backgroundTintList = ContextCompat.getColorStateList(context,
+                    R.color.selector_light_button_background)
             }
             ButtonStyle.CLEAR -> {
                 setTextColor(ContextCompat.getColorStateList(context,
-                        R.color.selector_clear_button_text))
-                setBackgroundResource(R.drawable.button_bfr_round_white)
+                    R.color.selector_clear_button_text))
+                backgroundTintList = ContextCompat.getColorStateList(context,
+                    R.color.selector_clear_button_background)
             }
         }
     }
 
     private fun getStyleIdentifierFromStyleableAttributes(attrs: AttributeSet?): Int {
         val styledAttributes = context.theme.obtainStyledAttributes(
-                attrs,
-                R.styleable.RoundedButtonStyles,
-                0, 0)
+            attrs,
+            R.styleable.RoundedButtonStyles,
+            0, 0)
 
         if (styledAttributes.hasValue(R.styleable.RoundedButtonStyles_bufferButtonStyle)) {
             return styledAttributes.getInt(R.styleable.RoundedButtonStyles_bufferButtonStyle, 0)
