@@ -7,12 +7,13 @@ import androidx.core.content.ContextCompat
 import androidx.appcompat.widget.AppCompatButton
 import android.util.AttributeSet
 import android.view.Gravity.CENTER
+import com.google.android.material.button.MaterialButton
 
 class RoundedButton @JvmOverloads constructor(
         context: Context,
         attrs: AttributeSet? = null,
         defStyleAttr: Int = 0
-) : AppCompatButton(context, attrs, defStyleAttr) {
+) : MaterialButton(context, attrs, defStyleAttr) {
 
     init {
         setBackground(attrs)
@@ -22,8 +23,7 @@ class RoundedButton @JvmOverloads constructor(
     }
 
     private fun setBackground(attrs: AttributeSet? = null) {
-        val style = ButtonStyle.fromIdentifier(getStyleIdentifierFromStyleableAttributes(attrs))
-        when (style) {
+        when (ButtonStyle.fromIdentifier(getStyleIdentifierFromStyleableAttributes(attrs))) {
             ButtonStyle.DARK -> {
                 setTextColor(ContextCompat.getColorStateList(context,
                         R.color.selector_dark_button_text))
