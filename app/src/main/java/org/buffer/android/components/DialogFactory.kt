@@ -130,6 +130,15 @@ object DialogFactory {
     }
 
     fun createSimpleInfoDialog(
+        context: Context,
+        title: String,
+        message: String,
+        neutral: String
+    ): AlertDialog {
+        return createSimpleInfoDialog(context, title, message, neutral)
+    }
+
+    fun createSimpleInfoDialog(
             context: Context,
             @StringRes titleResource: Int,
             @StringRes messageResource: Int,
