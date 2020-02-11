@@ -36,7 +36,7 @@ publish {
     userOrg = 'buffer'
     groupId = 'org.buffer.android'
     artifactId = 'android-components'
-    publishVersion = '0.5'
+    publishVersion = '0.6'
     desc = 'An Android library for frequently used UI components'
     website = 'https://github.com/bufferapp/android-components'
 }

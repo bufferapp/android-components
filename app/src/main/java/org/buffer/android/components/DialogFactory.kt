@@ -21,6 +21,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 object DialogFactory {
 
@@ -33,7 +34,7 @@ object DialogFactory {
             positiveListener: DialogInterface.OnClickListener? = null,
             negativeListener: DialogInterface.OnClickListener? = null
     ): AlertDialog {
-        val alertDialog = AlertDialog.Builder(context)
+        val alertDialog = MaterialAlertDialogBuilder(context)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(positive, positiveListener)
@@ -46,10 +47,10 @@ object DialogFactory {
             title: String,
             message: String
     ): AlertDialog {
-        val alertDialog = AlertDialog.Builder(context)
+        val alertDialog = MaterialAlertDialogBuilder(context)
                 .setTitle(title)
                 .setMessage(message)
-                .setNeutralButton(R.string.dialog_action_ok, null);
+                .setNeutralButton(R.string.dialog_action_ok, null)
         return alertDialog.create()
     }
 
@@ -59,7 +60,7 @@ object DialogFactory {
             message: String,
             positive: String
     ): AlertDialog {
-        val alertDialog = AlertDialog.Builder(context)
+        val alertDialog = MaterialAlertDialogBuilder(context)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(positive, null)
@@ -75,7 +76,7 @@ object DialogFactory {
             positiveListener: DialogInterface.OnClickListener? = null,
             negativeListener: DialogInterface.OnClickListener? = null
     ): AlertDialog {
-        val alertDialog = AlertDialog.Builder(context)
+        val alertDialog = MaterialAlertDialogBuilder(context)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(positive, positiveListener)
@@ -105,7 +106,7 @@ object DialogFactory {
         (view.findViewById<View>(R.id.text_message) as TextView).text = context.getString(message)
         (view.findViewById<View>(R.id.button_positive) as TextView).text = context.getString(positive)
         (view.findViewById<View>(R.id.button_neutral) as TextView).text = context.getString(neutral)
-        return AlertDialog.Builder(context).setView(view).create()
+        return MaterialAlertDialogBuilder(context).setView(view).create()
     }
 
     fun createInfoDialog(
@@ -119,7 +120,7 @@ object DialogFactory {
             negativeListener: DialogInterface.OnClickListener? = null,
             neutralListener: DialogInterface.OnClickListener
     ): AlertDialog {
-        return AlertDialog.Builder(context)
+        return MaterialAlertDialogBuilder(context)
                 .setTitle(titleResource)
                 .setMessage(messageResource)
                 .setPositiveButton(positiveResource, positiveListener)
@@ -157,7 +158,7 @@ object DialogFactory {
             buttonText: String,
             onClickListener: DialogInterface.OnClickListener? = null
     ): AlertDialog {
-        val alertDialog = AlertDialog.Builder(context)
+        val alertDialog = MaterialAlertDialogBuilder(context)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(buttonText, onClickListener)
@@ -173,7 +174,7 @@ object DialogFactory {
             positiveClickListener: DialogInterface.OnClickListener? = null,
             neutralClickListener: DialogInterface.OnClickListener? = null
     ): AlertDialog {
-        val alertDialog = AlertDialog.Builder(context)
+        val alertDialog = MaterialAlertDialogBuilder(context)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(positiveButtonText, positiveClickListener)
@@ -194,7 +195,7 @@ object DialogFactory {
             items: Array<String>,
             onClickListener: DialogInterface.OnClickListener? = null
     ): AlertDialog {
-        return AlertDialog.Builder(context).setItems(items, onClickListener).create()
+        return MaterialAlertDialogBuilder(context).setItems(items, onClickListener).create()
     }
 
     fun createProgressDialog(
@@ -239,13 +240,13 @@ object DialogFactory {
             defaultText: String?,
             inputType: Int
     ): AlertDialog.Builder {
-        val builder = AlertDialog.Builder(context)
+        val builder = MaterialAlertDialogBuilder(context)
         builder.setTitle(titleResource)
 
         val input = EditText(context)
         input.inputType = inputType
         if (inputType == InputType.TYPE_TEXT_FLAG_MULTI_LINE) {
-            input.setSingleLine(false)
+            input.isSingleLine = false
             input.maxLines = 8
         }
         if (defaultText != null) input.setText(defaultText)
@@ -266,7 +267,7 @@ object DialogFactory {
             inputListener: InputListener? = null,
             defaultText: String? = null
     ): AlertDialog {
-        val builder = AlertDialog.Builder(context)
+        val builder = MaterialAlertDialogBuilder(context)
                 .setTitle(titleResource)
                 .setMessage(messageResource)
 
@@ -306,12 +307,12 @@ object DialogFactory {
             @StringRes neutral: Int,
             @StringRes checkbox: Int,
             clickListener: ActionListener? = null
-    ): AlertDialog.Builder {
+    ): MaterialAlertDialogBuilder {
         val checkboxView = LayoutInflater.from(context).inflate(R.layout.checkbox, null)
         val dontShowAgain = checkboxView.findViewById<CheckBox>(R.id.skip)
         dontShowAgain.setText(checkbox)
 
-        return AlertDialog.Builder(context)
+        return MaterialAlertDialogBuilder(context)
                 .setView(checkboxView)
                 .setTitle(title)
                 .setMessage(message)
