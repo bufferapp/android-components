@@ -22,8 +22,67 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.android.synthetic.main.dialog_whats_new.view.*
 
 object DialogFactory {
+
+    fun createWhatsNewDialog(
+        context: Context,
+        @StringRes header: Int? = null,
+        @DrawableRes heading: Int? = null,
+        @StringRes title: Int? = null,
+        @StringRes message: Int? = null,
+        @StringRes positive: Int? = null,
+        @StringRes neutral: Int? = null,
+        positiveListener: View.OnClickListener? = null,
+        neutralListener: View.OnClickListener? = null
+    ): AlertDialog {
+        val view = LayoutInflater.from(context).inflate(R.layout.dialog_whats_new, null)
+
+        title?.let {
+            view.titleText.text = context.getString(title)
+        } ?: run {
+            view.titleText.visibility = View.GONE
+        }
+
+        heading?.let {
+            view.headerImage.setImageDrawable(ContextCompat.getDrawable(context, heading))
+        } ?: run {
+            view.headerImage.visibility = View.GONE
+        }
+
+        header?.let {
+            view.headerText.text = context.getString(header)
+        } ?: run {
+            view.headerText.visibility = View.GONE
+        }
+
+        message?.let {
+            view.messageText.text = context.getString(message)
+        } ?: run {
+            view.messageText.visibility = View.GONE
+        }
+
+        positive?.let {
+            view.positiveButton.text = context.getString(positive)
+            view.positiveButton.setOnClickListener {
+                positiveListener?.onClick(view.positiveButton)
+            }
+        } ?: run {
+            view.positiveButton.visibility = View.GONE
+        }
+
+        neutral?.let {
+            view.neutralButton.text = context.getString(neutral)
+            view.neutralButton.setOnClickListener {
+                neutralListener?.onClick(view.neutralButton)
+            }
+        } ?: run {
+            view.neutralButton.visibility = View.GONE
+        }
+
+        return AlertDialog.Builder(context).setView(view).create()
+    }
 
     fun createSimpleYesNoDialog(
             context: Context,
