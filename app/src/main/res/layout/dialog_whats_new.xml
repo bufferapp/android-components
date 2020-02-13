@@ -10,10 +10,12 @@
         android:id="@+id/headerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:textSize="@dimen/text_large_body" />
+        android:layout_marginBottom="16dp"
+        android:textSize="@dimen/text_large_body"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/headerImage"
@@ -21,7 +23,7 @@
         android:layout_height="140dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="12dp"
         android:adjustViewBounds="true"
         android:scaleType="centerInside" />
 
@@ -51,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="6dp"
         app:bufferButtonStyle="light" />
 
     <org.buffer.android.components.RoundedButton
