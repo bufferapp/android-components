@@ -38,6 +38,7 @@ object DialogFactory {
         neutralListener: View.OnClickListener? = null
     ): AlertDialog {
         val view = LayoutInflater.from(context).inflate(R.layout.dialog_whats_new, null)
+        val alert = AlertDialog.Builder(context).setView(view).create()
 
         title?.let {
             view.titleText.text = context.getString(title)
@@ -67,6 +68,7 @@ object DialogFactory {
             view.positiveButton.text = context.getString(positive)
             view.positiveButton.setOnClickListener {
                 positiveListener?.onClick(view.positiveButton)
+                alert.dismiss()
             }
         } ?: run {
             view.positiveButton.visibility = View.GONE
@@ -76,12 +78,13 @@ object DialogFactory {
             view.neutralButton.text = context.getString(neutral)
             view.neutralButton.setOnClickListener {
                 neutralListener?.onClick(view.neutralButton)
+                alert.dismiss()
             }
         } ?: run {
             view.neutralButton.visibility = View.GONE
         }
 
-        return AlertDialog.Builder(context).setView(view).create()
+        return alert
     }
 
     fun createSimpleYesNoDialog(
