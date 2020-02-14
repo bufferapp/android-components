@@ -5,13 +5,14 @@ import android.content.Context
 import androidx.core.content.ContextCompat
 import android.util.AttributeSet
 import android.view.Gravity.CENTER
+import androidx.appcompat.view.ContextThemeWrapper
 import com.google.android.material.button.MaterialButton
 
 class RoundedButton @JvmOverloads constructor(
     context: Context,
-    attrs: AttributeSet? = null,
+    attrs: AttributeSet,
     defStyleAttr: Int = 0
-) : MaterialButton(context, attrs, defStyleAttr) {
+) : MaterialButton(ContextThemeWrapper(context, R.style.RoundedButtonStyle), attrs, defStyleAttr) {
 
     init {
         setBackground(attrs)
