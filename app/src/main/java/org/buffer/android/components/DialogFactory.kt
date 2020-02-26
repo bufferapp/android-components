@@ -199,7 +199,7 @@ object DialogFactory {
         message: String,
         neutral: String
     ): AlertDialog {
-        return createSimpleInfoDialog(context, title, message, neutral)
+        return createSimpleInfoDialog(context, title, message, neutral, null)
     }
 
     fun createSimpleInfoDialog(
