@@ -10,7 +10,7 @@ import com.google.android.material.button.MaterialButton
 
 class RoundedButton @JvmOverloads constructor(
     context: Context,
-    attrs: AttributeSet,
+    attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : MaterialButton(ContextThemeWrapper(context, R.style.RoundedButtonStyle), attrs, defStyleAttr) {
 
