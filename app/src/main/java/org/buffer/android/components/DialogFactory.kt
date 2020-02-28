@@ -377,7 +377,7 @@ object DialogFactory {
             @StringRes title: Int,
             @StringRes message: Int,
             @StringRes positive: Int,
-            @StringRes neutral: Int,
+            @StringRes neutral: Int?,
             @StringRes checkbox: Int,
             clickListener: ActionListener? = null
     ): MaterialAlertDialogBuilder {
@@ -385,14 +385,17 @@ object DialogFactory {
         val dontShowAgain = checkboxView.findViewById<CheckBox>(R.id.skip)
         dontShowAgain.setText(checkbox)
 
-        return MaterialAlertDialogBuilder(context)
+        val builder = MaterialAlertDialogBuilder(context)
                 .setView(checkboxView)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(positive) { dialog, which ->
                     clickListener?.onPositiveButtonSelected(dontShowAgain.isChecked) }
-                .setNeutralButton(neutral) { dialog, which ->
-                    clickListener?.onNeutralButtonSelected(dontShowAgain.isChecked) }
+        if (neutral != null) {
+            builder.setNeutralButton(neutral) { dialog, which ->
+                clickListener?.onNeutralButtonSelected(dontShowAgain.isChecked) }
+        }
+        return builder
     }
 
 
