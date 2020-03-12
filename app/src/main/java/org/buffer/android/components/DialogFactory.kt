@@ -389,7 +389,7 @@ object DialogFactory {
                 .setView(checkboxView)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton(positive) { dialog, which ->
+            .setPositiveButton(positive) { dialog, which ->
                     clickListener?.onPositiveButtonSelected(dontShowAgain.isChecked) }
         if (neutral != null) {
             builder.setNeutralButton(neutral) { dialog, which ->
