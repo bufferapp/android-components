@@ -373,31 +373,30 @@ object DialogFactory {
     }
 
     fun createCheckboxDialog(
-            context: Context,
-            @StringRes title: Int,
-            @StringRes message: Int,
-            @StringRes positive: Int,
-            @StringRes neutral: Int?,
-            @StringRes checkbox: Int,
-            clickListener: ActionListener? = null
+        context: Context,
+        title: String,
+        message: String,
+        positive: String,
+        neutral: String?,
+        checkbox: String,
+        clickListener: ActionListener? = null
     ): MaterialAlertDialogBuilder {
         val checkboxView = LayoutInflater.from(context).inflate(R.layout.checkbox, null)
         val dontShowAgain = checkboxView.findViewById<CheckBox>(R.id.skip)
-        dontShowAgain.setText(checkbox)
+        dontShowAgain.text = checkbox
 
         val builder = MaterialAlertDialogBuilder(context)
-                .setView(checkboxView)
-                .setTitle(title)
-                .setMessage(message)
-            .setPositiveButton(positive) { dialog, which ->
-                    clickListener?.onPositiveButtonSelected(dontShowAgain.isChecked) }
+            .setView(checkboxView)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton(positive) { _, _ ->
+                clickListener?.onPositiveButtonSelected(dontShowAgain.isChecked) }
         if (neutral != null) {
-            builder.setNeutralButton(neutral) { dialog, which ->
+            builder.setNeutralButton(neutral) { _, _ ->
                 clickListener?.onNeutralButtonSelected(dontShowAgain.isChecked) }
         }
         return builder
     }
-
 
     interface InputListener {
         fun onTextInput(text: String)
