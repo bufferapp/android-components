@@ -91,15 +91,23 @@ object DialogFactory {
             context: Context,
             title: String,
             message: String? = null,
-            positive: String,
-            negative: String,
+            positive: String? = null,
+            negative: String? = null,
+            neutral: String? = null,
             positiveListener: DialogInterface.OnClickListener? = null,
-            negativeListener: DialogInterface.OnClickListener? = null
+            negativeListener: DialogInterface.OnClickListener? = null,
+            neutralListener: DialogInterface.OnClickListener? = null
     ): AlertDialog {
-        val alertDialog = MaterialAlertDialogBuilder(context)
-                .setTitle(title)
-                .setPositiveButton(positive, positiveListener)
-                .setNegativeButton(negative, negativeListener)
+        val alertDialog = MaterialAlertDialogBuilder(context).setTitle(title)
+        if (positive != null) {
+            alertDialog.setPositiveButton(positive, positiveListener)
+        }
+        if (negative != null) {
+            alertDialog.setNegativeButton(negative, negativeListener)
+        }
+        if (neutral != null) {
+            alertDialog.setNeutralButton(neutral, neutralListener)
+        }
         if (!message.isNullOrBlank()) {
             alertDialog.setMessage(message)
         }
