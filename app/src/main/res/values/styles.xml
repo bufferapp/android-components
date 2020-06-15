@@ -32,4 +32,8 @@
         <item name="cornerSize">4dp</item>
     </style>
 
+    <style name="AlertSheetImageStyle">
+        <item name="android:visibility">visible</item>
+    </style>
+
 </resources>

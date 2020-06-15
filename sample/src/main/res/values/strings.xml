@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Sample</string>
+
+    <!--    Instagram Reminder Sheet Demo -->
+    <string name="title_ig_reminder">Instagram Reminder</string>
+    <string name="subtitle_ig_reminder">Some of your accounts aren’t enabled for Direct Posting, we’ll send out reminders for those accounts.</string>
+    <string name="primary_action_ig_reminder_sheet">Got it</string>
+    <string name="secondary_action_ig_reminder_sheet">Learn more</string>
 </resources>
