@@ -80,7 +80,6 @@ object BottomSheetFactory {
             @DrawableRes icon: Int,
             postiveListener: View.OnClickListener? = null,
             neutralListener: View.OnClickListener? = null
-
     ) = BottomSheetDialog(context, R.style.BottomSheetDialog).apply {
         val view = layoutInflater.inflate(R.layout.view_simple_alert_sheet, null)
 
