@@ -6,11 +6,14 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.LinearLayout
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.view_item_selection_message_sheet.view.list_item_selection_sheet_options
 import kotlinx.android.synthetic.main.view_item_selection_message_sheet.view.text_item_selection_message
 import kotlinx.android.synthetic.main.view_item_selection_message_sheet.view.text_item_selection_title
+import kotlinx.android.synthetic.main.view_simple_alert_sheet.view.*
 
 object BottomSheetFactory {
 
@@ -66,5 +69,31 @@ object BottomSheetFactory {
             footerView?.let { view.addView(footerView) }
             setContentView(view)
         }
+    }
+
+    fun createSimpleAlertStyleBottomSheet(
+            context: Context,
+            @StringRes title: Int,
+            @StringRes message: Int,
+            @StringRes positiveButtonText: Int,
+            @StringRes neutralButtonText: Int,
+            @DrawableRes icon: Int,
+            postiveListener: View.OnClickListener? = null,
+            neutralListener: View.OnClickListener? = null
+    ) = BottomSheetDialog(context, R.style.BottomSheetDialog).apply {
+        val view = layoutInflater.inflate(R.layout.view_simple_alert_sheet, null)
+
+        view.icon.setImageDrawable(ContextCompat.getDrawable(context, icon))
+        view.title.text = context.getString(title)
+        view.message.text = context.getString(message)
+        view.button_positive.apply {
+            text = context.getString(positiveButtonText)
+            setOnClickListener(postiveListener)
+        }
+        view.button_neutral.apply {
+            text = context.getString(neutralButtonText)
+            setOnClickListener(neutralListener)
+        }
+        setContentView(view)
     }
 }
