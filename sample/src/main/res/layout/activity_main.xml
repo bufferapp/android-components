@@ -9,7 +9,8 @@
     <org.buffer.android.components.RoundedButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:id="@+id/click_me_button"
+        android:text="Click Me!"
         android:enabled="true"
         app:bufferButtonStyle="light"
         app:layout_constraintBottom_toBottomOf="parent"
