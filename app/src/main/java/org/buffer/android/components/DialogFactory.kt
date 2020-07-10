@@ -306,10 +306,11 @@ object DialogFactory {
             @StringRes positive: Int,
             @StringRes negative: Int,
             inputListener: InputListener,
-            defaultText: String
+            defaultText: String ?= null,
+            hintText: String ?= null
     ): AlertDialog {
-        return getSimpleInputDialogBuilder(context, titleResource, positive,
-                negative, inputListener, defaultText, InputType.TYPE_TEXT_VARIATION_URI).create()
+        return getSimpleInputDialogBuilder(context, titleResource, positive, negative,
+            inputListener, defaultText, hintText, InputType.TYPE_TEXT_VARIATION_URI).create()
     }
 
     private fun getSimpleInputDialogBuilder(
@@ -319,6 +320,7 @@ object DialogFactory {
             @StringRes negative: Int,
             inputListener: InputListener,
             defaultText: String?,
+            hintText: String?,
             inputType: Int
     ): AlertDialog.Builder {
         val builder = MaterialAlertDialogBuilder(context)
@@ -331,6 +333,7 @@ object DialogFactory {
             input.maxLines = 8
         }
         if (defaultText != null) input.setText(defaultText)
+        if (hintText != null) input.hint = hintText
 
         val padding = DisplayMetricsUtil.dpToPx(16)
         builder.setView(input, padding, 0, padding, 0)
