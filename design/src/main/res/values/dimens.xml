@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="material_card_stroke_width">0.5dp</dimen>
+    <dimen name="button_radius">4dp</dimen>
+    <dimen name="content_action_padding">6dp</dimen>
+
+    <dimen name="one_space">8dp</dimen>
+    <dimen name="two_space">16dp</dimen>
+
+    <dimen name="item_content_vertical_padding">0dp</dimen>
+    <dimen name="item_content_horizontal_padding">0dp</dimen>
+
+    <dimen name="buffer_card_width">340dp</dimen>
+    <dimen name="tabbed_content_top_margin_to_center">180dp</dimen>
+    <dimen name="error_view_top_offset">-120dp</dimen>
+</resources>
