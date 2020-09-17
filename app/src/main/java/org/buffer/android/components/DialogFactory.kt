@@ -14,14 +14,13 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 
-import org.buffer.android.counterview.CounterView
-
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.dialog_whats_new.view.*
 
 object DialogFactory {
@@ -343,26 +342,24 @@ object DialogFactory {
     }
 
     fun showLimitedLengthInputDialog(
-            context: Context, maxLength: Int,
-            @StringRes titleResource: Int,
-            @StringRes messageResource: Int,
-            @StringRes positive: Int,
-            @StringRes negative: Int,
-            inputListener: InputListener? = null,
-            defaultText: String? = null
+        context: Context,
+        maxLength: Int,
+        titleResource: String,
+        messageResource: String,
+        positive: String,
+        negative: String,
+        inputListener: InputListener? = null,
+        defaultText: String? = null
     ): AlertDialog {
         val builder = MaterialAlertDialogBuilder(context)
-                .setTitle(titleResource)
-                .setMessage(messageResource)
+            .setTitle(titleResource)
+            .setMessage(messageResource)
 
         val layout = LayoutInflater.from(context)
                 .inflate(R.layout.view_limited_length_input, null)
         val editText = layout.findViewById<EditText>(R.id.input)
-        val counterView = layout.findViewById<CounterView>(R.id.view_counter)
+        val inputLayout = layout.findViewById<TextInputLayout>(R.id.textContainer)
         if (defaultText != null) editText.setText(defaultText)
-        counterView.charactersRemainingUntilCounterDisplay = (maxLength * 0.15).toInt()
-        counterView.counterMaxLength = maxLength
-        counterView.attachToEditText(editText)
 
         builder.setView(layout)
                 .setPositiveButton(positive) { _, _ ->
@@ -371,14 +368,20 @@ object DialogFactory {
                 .setNegativeButton(negative) { dialog, _ -> dialog.cancel() }
         val dialog = builder.create()
         editText.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-                dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled =
-                        editText.text.length <= maxLength
-            }
+            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
 
             override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
 
-            override fun afterTextChanged(editable: Editable) {}
+            override fun afterTextChanged(editable: Editable) {
+                val hasTextWithinAllowedLimit = editText.text.length <= maxLength
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = hasTextWithinAllowedLimit
+                if (!hasTextWithinAllowedLimit) {
+                    inputLayout.error = context.getString(
+                        R.string.error_message_input_dialog, maxLength)
+                } else {
+                    inputLayout.error = null
+                }
+            }
         })
         return dialog
     }

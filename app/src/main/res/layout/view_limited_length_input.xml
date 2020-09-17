@@ -8,22 +8,21 @@
     android:paddingStart="16dp"
     android:paddingEnd="16dp">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:importantForAutofill="no"
-        android:inputType="textMultiLine"
-        tools:text="@tools:sample/lorem/random" />
+        app:boxBackgroundColor="?colorSurface"
+        app:errorEnabled="true">
 
-    <org.buffer.android.counterview.CounterView
-        android:id="@+id/view_counter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        app:counterErrorTextColor="@color/red"
-        app:counterMode="descending"
-        app:counterCountColor="?colorAccent"
-        tools:text="260" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            tools:text="@tools:sample/lorem/random" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 </LinearLayout>
