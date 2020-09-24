@@ -45,7 +45,7 @@ publishing {
             artifact("$buildDir/outputs/aar/app-release.aar")
             groupId 'org.buffer.android'
             artifactId 'android-components'
-            version this.version
+            version '1.8'
 
             pom.withXml {
                 def dependenciesNode = asNode().appendNode('dependencies')
@@ -68,15 +68,18 @@ publishing {
 bintray {
     user = getKey("BINTRAY_USER")
     key = getKey("BINTRAY_KEY")
+    publications = ['Production']
     pkg {
         repo = 'Maven'
         name = 'android-components'
         userOrg = 'buffer'
         vcsUrl = 'https://github.com/bufferapp/android-components'
+        publish = true
+        publicDownloadNumbers = true
         version {
-            name = '1.6'
+            name = '1.8'
             released  = new Date()
-            vcsTag = '1.6'
+            vcsTag = '1.8'
         }
     }
 }
