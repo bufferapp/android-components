@@ -2,4 +2,6 @@
     <string name="dialog_dont_ask_again">Don\'t ask again.</string>
 
     <string name="dialog_action_ok">OK</string>
+
+    <string name="error_message_input_dialog">Content cannot be more than %d characters</string>
 </resources>

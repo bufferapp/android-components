@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import org.buffer.android.components.BottomSheetFactory
+import org.buffer.android.components.DialogFactory
 
 class MainActivity : AppCompatActivity() {
     lateinit var reminderBottomSheet: BottomSheetDialog
@@ -29,6 +30,17 @@ class MainActivity : AppCompatActivity() {
                     })
 
             reminderBottomSheet.show()
+        }
+
+        textInputButton.setOnClickListener {
+            DialogFactory.showLimitedLengthInputDialog(
+                this,
+                10,
+                "Title",
+                "Message",
+                "OK",
+                "Cancel"
+            ).show()
         }
     }
 }
