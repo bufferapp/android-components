@@ -45,7 +45,7 @@ publishing {
             artifact("$buildDir/outputs/aar/app-release.aar")
             groupId 'org.buffer.android'
             artifactId 'android-components'
-            version '1.11'
+            version '1.12'
 
             pom.withXml {
                 def dependenciesNode = asNode().appendNode('dependencies')
