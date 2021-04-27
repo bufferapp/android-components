@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">@color/white</color>
+    <color name="color_primary_variant">@color/gray_darker</color>
+    <color name="color_secondary">@color/curious_blue</color>
+    <color name="color_secondary_variant">@color/curious_blue_dark</color>
+
+    <!--colorBackground appears behind scrollable content and is used for the default window-->
+    <!--background. colorSurface is mapped to the surface of components such as cards, sheets-->
+    <!--and menus. colorError is used to indicate an error state for components such as-->
+    <!--text fields.-->
+    <color name="color_background">@color/gray_lighter</color>
+    <color name="color_surface">@color/white</color>
+    <color name="color_error">@color/red_dark</color>
+
+    <!--"On" colors define how text, icons and strokes are colored in relation to the surface-->
+    <!--on which they appear.-->
+    <color name="color_on_primary">@color/text_primary</color>
+    <color name="color_on_primary_inverse">@color/white</color>
+    <color name="color_on_primary_70">#E63D3D3D</color>
+    <color name="color_on_primary_20">#333D3D3D</color>
+    <color name="color_primary_as_surface">#F5F5F5</color>
+    <color name="color_secondary_as_surface">#1A2C4BFF</color>
+    <color name="color_on_secondary">@color/white</color>
+    <color name="color_on_background">@color/text_secondary</color>
+    <color name="color_on_surface">@color/gray_lighter</color>
+    <color name="color_on_surface_border">@color/gray_light</color>
+    <color name="color_on_error">@color/white</color>
+
+    <color name="message_background">#f4f7f9</color>
+    <color name="unselected_item">#B8B8B8</color>
+    <color name="text_on_colored_surface">@color/black</color>
+    <color name="text_on_surface">@color/gray_dark</color>
+    <color name="search_background">@color/gray_lighter</color>
+
+    <color name="text_primary">@color/gray_darker</color>
+    <color name="text_secondary">@color/gray_dark</color>
+</resources>

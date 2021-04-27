@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="PublishTheme.DayNight" parent="Base.PublishTheme"/>
+
+    <style name="Base.PublishTheme" parent="Base.PublishThemeBuilder">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
+        <item name="colorPrimaryDark">@color/color_on_primary</item>
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorSecondaryVariant">@color/color_secondary_variant</item>
+
+        <item name="android:colorBackground">@color/color_background</item>
+        <item name="colorSurface">@color/color_surface</item>
+        <item name="colorError">@color/color_error</item>
+
+        <item name="colorOnPrimary">@color/color_on_primary</item>
+        <item name="colorOnSecondary">@color/color_on_secondary</item>
+        <item name="colorOnBackground">@color/color_on_background</item>
+        <item name="colorOnSurface">@color/color_on_surface</item>
+        <item name="colorOnError">@color/color_on_error</item>
+        <item name="android:windowBackground">@color/color_background</item>
+
+        <item name="materialAlertDialogTheme">@style/MaterialDialogTheme</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.PublishTheme.BottomSheetDialog</item>
+        <item name="navigationViewStyle">@style/Widget.PublishTheme.NavigationView</item>
+        <item name="toolbarStyle">@style/ToolbarTheme</item>
+        <item name="snackbarStyle">@style/SnackbarTheme</item>
+        <item name="textInputStyle">@style/TextInputLayoutTheme</item>
+        <item name="colorControlNormal">?android:textColorPrimary</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+
+    <style name="TextInputLayoutTheme" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/gray_lighter</item>
+        <item name="android:textColorHint">?android:textColorSecondary</item>
+        <item name="hintTextColor">?colorSecondary</item>
+        <item name="materialThemeOverlay">@style/TextInputLayoutAppearance</item>
+    </style>
+
+    <style name="TextInputLayoutAppearance" parent="ThemeOverlay.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="colorControlNormal">?colorSecondary</item>
+        <item name="colorControlActivated">?colorSecondary</item>
+        <item name="colorControlHighlight">?colorSecondary</item>
+    </style>
+
+    <style name="MaterialDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="buttonBarPositiveButtonStyle">@style/AlertButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/AlertButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/AlertButtonStyle</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/TitleTextStyle</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/BodyTextStyle</item>
+    </style>
+
+    <style name="TitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_title</item>
+    </style>
+
+    <style name="BodyTextStyle" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textSize">@dimen/text_body</item>
+    </style>
+
+    <style name="AlertButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="SnackbarTheme" parent="@style/Widget.MaterialComponents.Snackbar">
+        <item name="android:background">@color/gray_darker</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="@style/Widget.MaterialComponents.Toolbar.Surface">
+        <item name="titleTextColor">?android:textColorPrimary</item>
+        <item name="colorControlNormal">?android:textColorPrimary</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">?android:textColorPrimary</item>
+    </style>
+
+    <style name="Base.PublishThemeBuilder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">?colorOnBackground</item>
+        <item name="android:navigationBarColor">?colorPrimaryVariant</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?colorControlHighlight</item>
+
+        <item name="colorPrimaryDark">?colorPrimaryVariant</item>
+        <item name="colorAccent">?colorSecondary</item>
+    </style>
+
+    <style name="Publish.NoActionBar" parent="PublishTheme.DayNight">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>
