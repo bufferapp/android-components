@@ -45,7 +45,7 @@ publishing {
             artifact("$buildDir/outputs/aar/app-release.aar")
             groupId 'org.buffer.android'
             artifactId 'android-components'
-            version '1.8'
+            version '1.11'
 
             pom.withXml {
                 def dependenciesNode = asNode().appendNode('dependencies')
@@ -77,9 +77,9 @@ bintray {
         publish = true
         publicDownloadNumbers = true
         version {
-            name = '1.8'
+            name = '1.11'
             released  = new Date()
-            vcsTag = '1.8'
+            vcsTag = '1.11'
         }
     }
 }

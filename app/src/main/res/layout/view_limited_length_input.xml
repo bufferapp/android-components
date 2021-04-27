@@ -12,7 +12,6 @@
         android:id="@+id/textContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:boxBackgroundColor="?colorSurface"
         app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText

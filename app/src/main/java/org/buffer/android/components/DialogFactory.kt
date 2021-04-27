@@ -20,7 +20,6 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.dialog_whats_new.view.*
 
 object DialogFactory {
@@ -358,7 +357,6 @@ object DialogFactory {
         val layout = LayoutInflater.from(context)
                 .inflate(R.layout.view_limited_length_input, null)
         val editText = layout.findViewById<EditText>(R.id.input)
-        val inputLayout = layout.findViewById<TextInputLayout>(R.id.textContainer)
         if (defaultText != null) editText.setText(defaultText)
 
         builder.setView(layout)
@@ -376,10 +374,10 @@ object DialogFactory {
                 val hasTextWithinAllowedLimit = editText.text.length <= maxLength
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = hasTextWithinAllowedLimit
                 if (!hasTextWithinAllowedLimit) {
-                    inputLayout.error = context.getString(
+                    editText.error = context.getString(
                         R.string.error_message_input_dialog, maxLength)
                 } else {
-                    inputLayout.error = null
+                    editText.error = null
                 }
             }
         })
